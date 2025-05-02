@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<head>  
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css" rel="stylesheet" />
+    <title>Car_Agency</title>
+    <link rel="stylesheet" href="login-style.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <a href="#" class="navbar__logo">Car Agency</a>
+                <ul class="navbar__list">
+                    <li><a href="#" class="navbar__link">Home</a></li>
+                    <li><a href="#" class="navbar__link">About</a></li>
+                    <li><a href="#" class="navbar__link">Services</a></li>
+                    <li><a href="#" class="navbar__link">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+<main class="container mt-3">
+    <html lang="en">
+    <body>
+        <div class="login">
+            <img src="imgs/1.png" alt="login image" class="login__img">
+
+            <form method="post" class="login__form">
+                <h1 class="login__title">Login</h1>
+
+                <div class="login__container">
+                    <div class="login__box">
+                        <i class="ri-user-3-line login__icon"></i>
+
+                        <div class="login__box-input">
+                            <input type="email" class="login__input" name="email" placeholder="" required>
+                            <label for="" class="login__label">Email</label>
+                        </div>
+                    </div>
+                    <div class="login__box">
+                        <i class="ri-lock-password-line login__icon"></i>
+
+                        <div class="login__box-input">
+                            <input type="password" class="login__input" name="password" id="login-pass" required placeholder="" >
+                            <label for="" class="login__label">Password</label>
+                            <i class="ri-eye-off-line login__eye" id="login-eye"></i>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="login__check">
+                    <div class="login__check-group">
+                        <input type="checkbox" class="login__check-input" placeholder="">
+                        <label for="" class="login__check-label">Remember me </label>
+                    </div>
+
+                    <a href="#" class="login__forgot">Forgot Password</a>
+                </div>
+                <a href="user/home.html"> <input class="login__button" value="Login" name="login" ></a>
+                
+        
+                
+                <p class="login__register">Don't have an account? <a href="register.html">Register</a></p>
+            </form>
+        </div>
+
+
+
+        <script src="login.js"></script>
+    </body>
+
+    </html>
+  
+</main>
+
+
+
+
+
+
+
+
+
+
+
+    <!-- <?php
+            if (isset($_POST['login'])) {
+                $hostname = "localhost";
+                $username = "root";
+                $password = "";
+                $database = new PDO("mysql:host=$hostname;dbname=car_agency;charset=utf8", $username, $password);
+
+                $login = $database->prepare("SELECT * FROM users WHERE email=:email AND password =:password");
+                $login->bindParam("email", $_POST['email']);
+                $login->bindParam("password", $_POST['password']);
+                $login->execute();
+                if ($login->rowCount() === 1) {
+                    $user = $login->fetchObject();
+                    session_start();
+
+                    $_SESSION['email'] = $user->email;
+                    $_SESSION['password'] = $user->password;
+                    $_SESSION['user'] = $user;
+                    echo '<div class="alert-success" role="alert">
+        hello
+        </div>';
+
+                    if ($user->role === "user") {
+                        header("location:user/home.php", true);
+                    } else if ($user->role === "admin") {
+                        header("location:admin/index.php", true);
+                    }
+                } else {
+                    echo '<div class="alert-danger" role="alert">
+        email or password is wrong
+        </div>';
+                }
+            }
+
+            ?> -->
